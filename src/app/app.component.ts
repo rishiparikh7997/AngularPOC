@@ -36,7 +36,7 @@ export class AppComponent {
 
   exportToExcel(): void {
     const fileName = `ExcelSheet-${this.selectedTab}.xlsx`;
-    const table = document.getElementById(`table-${this.selectedTab}`);
+    const table = document.getElementById(`${this.tableData?.id}`);
 
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(table);
     const workbook: XLSX.WorkBook = XLSX.utils.book_new();
