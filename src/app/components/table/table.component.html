@@ -1,0 +1,12 @@
+<table *ngIf="tableData.id" class="table" [id]="tableData.id">
+  <thead>
+    <tr>
+      <th *ngFor="let header of tableData.headers">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of tableData.data">
+      <td *ngFor="let element of data">{{ element }}</td>
+    </tr>
+  </tbody>
+</table>

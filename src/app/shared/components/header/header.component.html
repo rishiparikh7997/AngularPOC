@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      *ngIf="NavElements.length"
+      class="collapse navbar-collapse"
+      id="navbarTogglerDemo01"
+    >
+      <a class="navbar-brand" href="#">Demo Project</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngFor="let element of NavElements; let i = index" class="nav-item">
+          <a
+            [ngClass]="element.style"
+            [class.active]="element.value == tabValue"
+            [href]="element.href"
+            (click)="selectedTabValue($event, element.value)"
+            >{{ element.value }}</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" (ngSubmit)="onSubmit()" #inputForm="ngForm">
+        <button
+          class="btn btn-outline-secondary mx-4"
+          type="button"
+          (click)="exportToExcel()"
+        >
+          Export
+        </button>
+        <input
+          class="form-control me-2"
+          [class.is-invalid]="name.invalid && (name.touched || name.dirty)"
+          type="text"
+          name="name"
+          [(ngModel)]="bucketName"
+          placeholder="Bucket name"
+          #name="ngModel"
+          required
+        />
+        <button
+          class="btn btn-outline-success"
+          type="submit"
+          [disabled]="inputForm.form.invalid"
+        >
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

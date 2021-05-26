@@ -1,0 +1,12 @@
+<app-header
+  (selectedTab)="selectedTabValue($event)"
+  (exportExcel)="exportToExcel()"
+></app-header>
+<div class="container">
+  <div *ngFor="let association of navAssociations">
+    <app-table
+      *ngIf="association.value == selectedTab"
+      [tableData]="association.table"
+    ></app-table>
+  </div>
+</div>
