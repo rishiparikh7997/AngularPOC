@@ -29,14 +29,14 @@
         </li>
       </ul>
       <!-- <form class="d-flex" (ngSubmit)="onSubmit()" #inputForm="ngForm"> -->
-        <button
-          class="btn btn-outline-secondary mx-4"
-          type="button"
-          (click)="exportToExcel()"
-        >
-          Export
-        </button>
-        <!-- <input
+      <button
+        class="btn btn-success mx-4"
+        type="button"
+        (click)="exportToExcel()"
+      >
+        Export
+      </button>
+      <!-- <input
           class="form-control me-2"
           [class.is-invalid]="name.invalid && (name.touched || name.dirty)"
           type="text"
@@ -46,14 +46,14 @@
           #name="ngModel"
           required
         /> -->
-        <button
-          class="btn btn-outline-success"
-          type="button"
-          (click)="makeAPICall()"
-        >
-          API Call
-        </button>
-        <!-- <button
+      <button
+        class="btn btn-outline-success"
+        type="button"
+        (click)="makeAPICall()"
+      >
+        Zip
+      </button>
+      <!-- <button
           class="btn btn-outline-success"
           type="submit"
           [disabled]="inputForm.form.invalid"
