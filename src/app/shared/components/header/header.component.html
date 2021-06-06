@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <div class="container-fluid mx-4">
     <button
       class="navbar-toggler"
       type="button"
@@ -28,7 +28,7 @@
           >
         </li>
       </ul>
-      <form class="d-flex" (ngSubmit)="onSubmit()" #inputForm="ngForm">
+      <!-- <form class="d-flex" (ngSubmit)="onSubmit()" #inputForm="ngForm"> -->
         <button
           class="btn btn-outline-secondary mx-4"
           type="button"
@@ -36,7 +36,7 @@
         >
           Export
         </button>
-        <input
+        <!-- <input
           class="form-control me-2"
           [class.is-invalid]="name.invalid && (name.touched || name.dirty)"
           type="text"
@@ -45,15 +45,22 @@
           placeholder="Bucket name"
           #name="ngModel"
           required
-        />
+        /> -->
         <button
+          class="btn btn-outline-success"
+          type="button"
+          (click)="makeAPICall()"
+        >
+          API Call
+        </button>
+        <!-- <button
           class="btn btn-outline-success"
           type="submit"
           [disabled]="inputForm.form.invalid"
         >
           Update
-        </button>
-      </form>
+        </button> -->
+      <!-- </form> -->
     </div>
   </div>
 </nav>

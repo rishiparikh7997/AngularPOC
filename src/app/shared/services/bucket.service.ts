@@ -9,7 +9,11 @@ export class BucketService {
   constructor(private http: HttpClient) {}
 
   addBucketName(bucketName: string) {
-    const URL = `${environment.bucketEndpoint}${bucketName}`;
-    return this.http.get(URL);
+    const URL = `${environment.bucketEndpoint}`;
+    return this.http.post(URL, null, {
+      params: {
+        bucketName,
+      },
+    });
   }
 }

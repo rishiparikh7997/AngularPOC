@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  bucketEndpoint: 'http://localhost:8080/zipFiles?bucketName='
+  bucketEndpoint: 'http://localhost:8080/zipFiles',
+  bucketName: 'test-bucket-name',
 };
 
 /*

@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { NAV_TABS_AND_ASSOCIATION } from '../../constants/UI_Constants';
 import { INavElements } from '../../interfaces/nav-element';
 import { BucketService } from '../../services/bucket.service';
+import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -31,8 +32,8 @@ export class HeaderComponent implements OnInit {
     this.selectedTab.emit(this.tabValue);
   }
 
-  onSubmit() {
-    const name = this.bucketName.trim();
+  makeAPICall() {
+    const name = environment.bucketName;
     if (name) {
       this.bucketService.addBucketName(name).subscribe({
         next: () => console.log('Bucket name pushed'),
